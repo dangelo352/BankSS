@@ -134,12 +134,9 @@ public class BankingApp extends Application {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
         grid.setStyle("-fx-background-color: white;");
-
         Text scenetitle = new Text("Banking Transactions");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(scenetitle, 0, 0, 2, 1);
-
-
         Button withdrawButton = new Button("Withdraw");
         withdrawButton.setTextFill(Color.WHITE);
         withdrawButton.setStyle("-fx-background-color: #ff0000;");
@@ -159,6 +156,14 @@ public class BankingApp extends Application {
         hbDepositButton.setAlignment(Pos.BOTTOM_LEFT);
         hbDepositButton.getChildren().add(depositButton);
         grid.add(hbDepositButton, 1, 2);
+        Button Logout = new Button("Logout");
+        HBox hbLogout = new HBox(10);
+        hbLogout.setAlignment(Pos.CENTER);
+        hbLogout.getChildren().add(Logout);
+        grid.add(hbLogout, 0, 3);
+        Logout.setOnAction(event -> {
+            start(primaryStage);
+        });
 
         depositButton.setOnAction(event -> {
             //
@@ -223,7 +228,7 @@ public class BankingApp extends Application {
             String password = pwBox.getText();
             String passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
 
-            try (FileWriter fw = new FileWriter("F:\\Users\\Dangelo\\IdeaProjects\\BankS\\src\\main\\java\\com\\example\\banks\\users.txt", true)) {
+            try (FileWriter fw = new FileWriter("F:\\Users\\Dangelo\\IdeaProjects\\BankSS\\src\\main\\java\\com\\example\\banks\\users.txt", true)) {
                 fw.write(username + "," + passwordHash + "," + balance + "\n");
                 actiontarget.setFill(Color.GREEN);
                 actiontarget.setText("Account created successfully");
@@ -270,13 +275,21 @@ public class BankingApp extends Application {
         hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
+        Button Logout = new Button("Logout");
+        HBox hbLogout = new HBox(10);
+        hbLogout.setAlignment(Pos.BOTTOM_LEFT);
+        hbLogout.getChildren().add(Logout);
+        grid.add(hbLogout, 0, 4);
+
 
 
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
 //Make a Deposit button set on action and a withdraw button set on action and deposit adds money to the balance and withdraws money from the balance
 
-
+Logout.setOnAction(event -> {
+            start(primaryStage);
+        });
         btn.setOnAction(event -> {
             String amountString = amountField.getText();
             double amountValue;

@@ -1,5 +1,6 @@
 11,$2a$10$WHe1qH20x9LHtrFMrx0s0ObXnTMau11UrCXp1vsMIMGtOysWkmPqq,1000.0
 d,$2a$10$gDrmcVHREX56ofnz8CEPC.C60Rg/D59QTzM9yPAGxIT2m1AdaoTm2,1000.0
 dd,$2a$10$PynDX8bI4R7FqMDR86L6VONFbePPr2p3TVFGeJaVrHj/jNnpeoQlW,1000.0
-dada,$2a$10$sc8.kLj3sudLbjlETRfq8OckJrwpS5x6tNLax78wwbgIkyzAWqs3S,2400.0
+dada,$2a$10$sc8.kLj3sudLbjlETRfq8OckJrwpS5x6tNLax78wwbgIkyzAWqs3S,7400.0
 dadada,$2a$10$GVaulF.7CpA9QuIPjJMtY.4IZSo5.Cvprs0tBjM8OLd.pw8hL0g02,1000.0
+Daisy5,$2a$10$gHMidp3OeLm2.ydV/vogdeV438eZqfxI272zSnzfFK9Z2EYDvnyAu,400500.0
