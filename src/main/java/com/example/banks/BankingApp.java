@@ -12,13 +12,11 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class BankingApp extends Application {
 
-    double balance = 1000;
+    double balance = 0;
 
     public static void main(String[] args) {
         launch(args);
@@ -42,12 +40,22 @@ public class BankingApp extends Application {
         grid.add(userName, 0, 1);
 
         TextField userTextField = new TextField();
+        //lets make the iphone keyboard work
+        //lets make the keyboard show up when the text field is clicked
+        //lets make the keyboard spawn below the current primary stage
+        //we cant use setWindow because the return type is null
+
+
+
+
         grid.add(userTextField, 1, 1);
 
         Label pw = new Label("Password:");
         grid.add(pw, 0, 2);
 
         PasswordField pwBox = new PasswordField();
+
+
         grid.add(pwBox, 1, 2);
 
         Button btn = new Button("Sign in");
@@ -250,6 +258,7 @@ public class BankingApp extends Application {
 
 //lets add balance amounts saved to each account made
 
+    //how
 
     private void showBankingScreen(Stage primaryStage, String type) {
 
@@ -280,14 +289,11 @@ public class BankingApp extends Application {
         hbLogout.setAlignment(Pos.BOTTOM_LEFT);
         hbLogout.getChildren().add(Logout);
         grid.add(hbLogout, 0, 4);
-
-
-
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
 //Make a Deposit button set on action and a withdraw button set on action and deposit adds money to the balance and withdraws money from the balance
 
-Logout.setOnAction(event -> {
+        Logout.setOnAction(event -> {
             start(primaryStage);
         });
         btn.setOnAction(event -> {
@@ -296,8 +302,6 @@ Logout.setOnAction(event -> {
             String currentUsername = ""; // The value of this variable should be set appropriately
             //we need to make currentUsername the username that is logged in
             currentUsername = Account.getCurrentUsername();
-
-
             List<Account> users = new ArrayList<>();
 
             try {

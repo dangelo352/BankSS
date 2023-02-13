@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class BankingAppbackup extends Application {
 
-    double balance = 1000;
+    double balance = 0;
 
     public static void main(String[] args) {
         launch(args);
