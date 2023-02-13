@@ -1,4 +1,9 @@
 package com.example.banks;
+import com.dlsc.keyboardfx.Keyboard;
+import com.dlsc.keyboardfx.KeyboardPane;
+import com.dlsc.keyboardfx.KeyboardView;
+import com.dlsc.keyboardfx.KeyboardView.Mode;
+import com.dlsc.keyboardfx.KeyboardView.Mode;
 
 import javafx.application.*;
 import javafx.geometry.*;
@@ -24,6 +29,10 @@ public class BankingApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
+
+
+
         primaryStage.setTitle("Banking Application");
 
         GridPane grid = new GridPane();
@@ -32,23 +41,28 @@ public class BankingApp extends Application {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Text scenetitle = new Text("       Bank Of Florida Poly");
-        scenetitle.setFont(Font.font("Comic Sans", FontWeight.BOLD, 20));
+        Text scenetitle = new Text("Bank Of Florida Poly");
+        scenetitle.setFont(Font.font("Comic Sans", FontWeight.BOLD, 50));
         grid.add(scenetitle, 0, 0, 2, 1);
 
         Label userName = new Label("Username:");
-        grid.add(userName, 0, 1);
+        grid.add(userName, 0, 1, 2, 1);
+        KeyboardView view = new KeyboardView();
+        view.setMinSize(500, 350);
+        grid.add(view, 0, 6, 7, 1);
+        view.setMode(Mode.STANDARD);
 
-        TextField userTextField = new TextField();
-        //lets make the iphone keyboard work
+
         //lets make the keyboard show up when the text field is clicked
         //lets make the keyboard spawn below the current primary stage
-        //we cant use setWindow because the return type is null
+
+        TextField userTextField = new TextField();
 
 
 
 
         grid.add(userTextField, 1, 1);
+
 
         Label pw = new Label("Password:");
         grid.add(pw, 0, 2);
@@ -63,6 +77,7 @@ public class BankingApp extends Application {
         hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
+
 
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
@@ -127,7 +142,7 @@ public class BankingApp extends Application {
 
 
 
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 1000, 1000);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -181,7 +196,7 @@ public class BankingApp extends Application {
         Label balanceLabel = new Label("Balance: " + balance);
 
         grid.add(balanceLabel, 0, 4);
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 1000, 1000);
         primaryStage.setScene(scene);
 
     }
@@ -198,6 +213,8 @@ public class BankingApp extends Application {
         grid.add(scenetitle, 0, 0, 2, 1);
 
         Label userName = new Label("Username:");
+        grid.setAlignment(Pos.CENTER);
+
         grid.add(userName, 0, 1);
 
         TextField userTextField = new TextField();
@@ -211,7 +228,7 @@ public class BankingApp extends Application {
 
         Button btn = new Button("Create");
         HBox hbBtn = new HBox(10);
-        hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
+        hbBtn.setAlignment(Pos.CENTER);
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
 
@@ -220,11 +237,15 @@ public class BankingApp extends Application {
         //add back button
         Button back = new Button("Back");
         HBox backbtn = new HBox(10);
-        backbtn.setAlignment(Pos.BOTTOM_LEFT);
+        backbtn.setAlignment(Pos.CENTER);
         backbtn.getChildren().add(back);
         grid.add(backbtn, 2, 4);
 
         grid.add(back, 1, 4);
+      KeyboardView view = new KeyboardView();
+
+        grid.add(view, 0, 5, 7, 1);
+
 
 
         back.setOnAction(event -> {
@@ -246,7 +267,7 @@ public class BankingApp extends Application {
 
         });
 
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 1000, 1000);
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -291,6 +312,9 @@ public class BankingApp extends Application {
         grid.add(hbLogout, 0, 4);
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
+        KeyboardView view = new KeyboardView();
+
+        grid.add(view, 0, 5, 7, 1);
 //Make a Deposit button set on action and a withdraw button set on action and deposit adds money to the balance and withdraws money from the balance
 
         Logout.setOnAction(event -> {
@@ -367,7 +391,7 @@ public class BankingApp extends Application {
 
 
 
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 1000, 900);
         primaryStage.setScene(scene);
         primaryStage.show();
 

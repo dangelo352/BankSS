@@ -65,6 +65,7 @@ public class BankingAppbackup extends Application {
         hbBtnCreate.getChildren().add(btnCreate);
         grid.add(hbBtnCreate, 0, 4);
 
+
         btnCreate.setOnAction(event -> {
             showCreateAccountView(primaryStage);
         });
@@ -115,7 +116,8 @@ public class BankingAppbackup extends Application {
         });
 
 
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 1000, 1000);
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -164,7 +166,7 @@ public class BankingAppbackup extends Application {
         Label balanceLabel = new Label("Balance: " + balance);
 
         grid.add(balanceLabel, 0, 4);
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 1000, 1000);
         primaryStage.setScene(scene);
 
     }
@@ -229,7 +231,7 @@ public class BankingAppbackup extends Application {
 
         });
 
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 1000, 1000);
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -350,7 +352,7 @@ public class BankingAppbackup extends Application {
             }
         });
 
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 1000, 1000);
         primaryStage.setScene(scene);
         primaryStage.show();
 
